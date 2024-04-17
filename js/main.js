@@ -43,7 +43,11 @@ const modalViews = document.querySelectorAll('.services__modal'),
 
         
 let modal = function(modalClick){
-    modalViews[modalClick].classList.add('active-modal');
+    if (modalViews[modalClick]) {
+        modalViews[modalClick].classList.add('active-modal');
+    } else {
+        console.error('Modal element not found for index: ', modalClick);
+    }
 }
 
 modalBtns.forEach((mb, i) => {

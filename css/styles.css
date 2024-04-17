@@ -33,7 +33,7 @@
   --biggest-font-size: 1.75rem;
   --h1-font-size: 1.5rem;
   --h2-font-size: 1.25rem;
-  --h3-font-size: 1rem;
+  --h3-font-size: 0.rem;
   --normal-font-size: .938rem;
   --small-font-size: .813rem;
   --smaller-font-size: .75rem;
@@ -55,7 +55,7 @@
     --biggest-font-size: 2.5rem;
     --h1-font-size: 2.25rem;
     --h2-font-size: 1.5rem;
-    --h3-font-size: 1.25rem;
+    --h3-font-size: 1rem;
     --normal-font-size: 1rem;
     --small-font-size: .875rem;
     --smaller-font-size: .813rem;
@@ -90,6 +90,10 @@ body {
 h1, h2, h3 {
   color: var(--title-color);
   font-weight: var(--font-semibold);
+}
+h4 {
+  color: var(--text-color);
+  font-weight: var(--font-medium);
 }
 
 ul {
@@ -249,6 +253,7 @@ body.light-theme{
 }
 
 .nav{
+    position: relative;
     height: var(--header-height);
     display: flex;
     justify-content: space-between;
@@ -267,9 +272,10 @@ body.light-theme{
 
 .nav_menu{
     position: fixed;
+    align-items: center;
     bottom: 1rem;
     background-color: hsla(var(--second-hue), 32%, 16%, .8);
-    width: 90%;
+    width: 35%;
     border-radius: 4rem;
     padding: 1rem 2.25rem;
     backdrop-filter: blur(10px);
@@ -448,7 +454,8 @@ body.light-theme{
 
 .about__img{
   width: 220px;
-  border-radius: 1.5rem;
+  height: 220px;
+  border-radius: 9rem;
   justify-self: center;
 }
 
@@ -512,7 +519,7 @@ body.light-theme{
 .skills__box{
   display: flex;
   justify-content: center;
-  column-gap: 2.5rem;
+  column-gap: 0.5rem;
 }
 
 
@@ -553,9 +560,10 @@ body.light-theme{
 
 
 .services__card{
+  grid-template-columns: repeat(2, 1fr);
   background-color: var(--container-color);
-  padding: 3rem 1.5rem 1.5rem;
-  border-radius: 1rem;
+  padding: 4rem 1.5rem 1.5rem;
+  border-radius: 2rem;
 }
 
 
@@ -606,6 +614,8 @@ body.light-theme{
   background-color: var(--body-color);
   padding: 4.5rem 1.5rem 2.5rem;
   border-radius: 1.5rem;
+  overflow-y: auto;
+  max-height: 70vh;
 }
 
 .services__modal-title,
@@ -692,7 +702,7 @@ body.light-theme{
 
 .work__img{
   border-radius: 1rem;
-  margin-bottom: .75rem;
+  margin-bottom: .95rem;
 }
 
 .work__title{
@@ -707,8 +717,8 @@ body.light-theme{
   font-size: var(--small-font-size);
   display: flex;
   align-items: center;
-  column-gap: .25rem;
-  /* cursor: pointer; */
+  column-gap: .5rem;
+  cursor: pointer;
 
 }
 
@@ -727,6 +737,7 @@ body.light-theme{
   background-color: var(--first-color);
   color: var(--body-color);
   border-radius: 6px;
+  cursor: pointer;
 }
 
 /*=============== TESTIMONIAL ===============*/
@@ -949,9 +960,10 @@ body.light-theme{
 
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
-@media screen and (max-width: 320px){
+@media screen and (max-width: 340px){
   .nav__menu{
     padding: 1rem 1.5rem;
+    align-items: center;
   }
   .home__buttons{
     flex-direction: column;
@@ -992,7 +1004,7 @@ body.light-theme{
 
 /* For medium devices */
 
-@media screen and (min-width: 567px){
+@media screen and (min-width: 576px){
   .nav__menu{
     width: 328px;
     left: 0;
@@ -1021,7 +1033,7 @@ body.light-theme{
   }
 
   .services__modal-content{
-    width: 500px;
+    width: auto;
     padding: 4.5rem 2.5rem 2.5rem;
   }
 
@@ -1049,7 +1061,7 @@ body.light-theme{
 
 }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .work__container{
     grid-template-columns: repeat(2, max-content);
   }
@@ -1063,7 +1075,7 @@ body.light-theme{
 /* For large devices */
 
 
-@media screen and (min-width: 992px){
+@media screen and (min-width: 1150px){
   .container{
     margin-left: auto;
     margin-right: auto;
