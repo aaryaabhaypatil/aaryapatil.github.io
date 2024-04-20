@@ -143,7 +143,7 @@ body.light-theme{
   box-shadow: 0 2px 4px hsla(0. 0%, 1%, .1);
 }
 
-.light-theme .nav__menu{
+.light-theme .nav_menu{
   background-color: hsla(var(--second-hue), 32%, 90%, .8);
 }
 
@@ -275,7 +275,7 @@ body.light-theme{
     align-items: center;
     bottom: 1rem;
     background-color: hsla(var(--second-hue), 32%, 16%, .8);
-    width: 1000px;
+    width: 100%;
     border-radius: 4rem;
     padding: 1rem 2.25rem;
     backdrop-filter: blur(10px);
@@ -960,11 +960,15 @@ body.light-theme{
 
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
-@media screen and (max-width: 340px){
-  .nav__menu{
-    padding: 1rem 1.5rem;
-    align-items: center;
+@media screen and (max-width: 320px){
+
+  .nav_menu{
+    width: 100%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
   }
+
   .home__buttons{
     flex-direction: column;
   }
@@ -1005,12 +1009,14 @@ body.light-theme{
 /* For medium devices */
 
 @media screen and (min-width: 576px){
-  .nav__menu{
-    width: 328px;
+  .nav_menu{
+    width: 80%;
     left: 0;
     right: 0;
     margin: 0 auto;
   }
+
+  
   .about__info{
     grid-template-columns: repeat(2, 220px);
     justify-content: center;
