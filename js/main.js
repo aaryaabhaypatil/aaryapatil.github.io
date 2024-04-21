@@ -63,6 +63,11 @@ modalClose.forEach((mc) =>{
         })
     })
 })
+
+
+
+
+
 /*=============== MIXITUP FILTER PORTFOLIO ===============*/
 let mixerPortfolio = mixitup('.work__container', {
     selectors: {
@@ -132,20 +137,19 @@ function scrollActive (){
         const sectionHeight = current.offsetHeight
         const sectionTop = current.offsetTop - 58
         const sectionId = current.getAttribute('id')
-        //const sectionsClass = document.querySelector('.nav__menu a[href*=' + sectionId + ']');
 
-        // Check if sectionsClass is not null
-            if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-                document.querySelector('.nav_menu a[href*=' + sectionId + ']').classList.add('active-link')
-            } else {
-                document.querySelector('.nav_menu a[href*=' + sectionId + ']').classList.remove('active-link')
-            }
+        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+            document.querySelector('.nav_menu a[href*=' + sectionId + ']').classList.add('active-link')
+        } else {
+            document.querySelector('.nav_menu a[href*=' + sectionId + ']').classList.remove('active-link')
+        }
         
-    
     })
 }
-
 window.addEventListener('scroll', scrollActive);
+
+
+
 
 
 /*=============== SHOW SCROLL UP ===============*/ 
